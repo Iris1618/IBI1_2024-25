@@ -1,5 +1,2 @@
-This is an example file for reflection in IBI1_2024-25.
-
-During this course, I have learnt version control, how to navigate Unix-like systems and how to write simple programs in Python.
-
-I have also learnt to write careful instructions when communicating online!
+During the couse, I improved my mastery of using git. And i have also discovered the convenience of using git.
+Though i encountered some difficuties, i overcame the problems with te help of classmates and teachers.
