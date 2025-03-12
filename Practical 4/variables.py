@@ -3,7 +3,7 @@ b=75
 c=a+b
 d=90
 e=5
-f=d+egi
+f=d+e
 if c>f:
     print("car-based commute faster")
 elif c<f:
