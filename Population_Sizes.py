@@ -5,7 +5,7 @@
 # Generate colors for UK pie char
 # Create and display UK pie chart
 # Generate colors for China pie chart
-#  Create and display China pie chart
+# Create and display China pie chart
 
 uk_countries=[57.11,3.13,1.91,5.45]                #data definition
 china_provinces=[65.77,41.88,45.28,61.27,85.15]   
