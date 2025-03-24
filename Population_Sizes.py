@@ -11,7 +11,7 @@ uk_countries=[57.11,3.13,1.91,5.45]                #data definition
 china_provinces=[65.77,41.88,45.28,61.27,85.15]   
 labels_uk=['England', 'Wales', 'Northern Ireland','Scotland'] 
 labels_china=['Zhejiang','Fujian', 'Jiangxi', 'Anhui','Jiangsu']
-print(sorted(uk_countries))   #printing sorted data
+print(sorted(uk_countries))      #printing sorted data
 print(sorted(china_provinces))
 import matplotlib.pyplot as plt  #library imports
 import numpy as np
