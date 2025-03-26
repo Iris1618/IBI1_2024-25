@@ -48,13 +48,11 @@ def address_neighbors(x, y):
 def infect_neighbors(neighbors):
     for nx, ny in neighbors:
             if population[nx, ny] == 0:        
-                if np.random.rand() < beta:
-                    population[nx, ny] = 1     # Infect
+                population[nx,ny]=np.random.choice([1,2],1,p=[1-beta,beta])
                     
 def recover(x, y):
-    if np.random.rand() < gamma:
-        population[x, y] = 2 
-
+    population[x,y]=np.random.choice([1,2],p=[1-gamma,gamma])   # or  if np.random.rand() < gamma: population[x, y] = 2  
+                               
 beta=0.3
 gamma=0.05
 times=100
@@ -67,8 +65,8 @@ for t in range(times):
         neighbors = address_neighbors(x, y)
         infect_neighbors(neighbors)
         recover(x,y)
-
-population=new_population
-plt.figure(figsize=(6, 4), dpi=150)
-plt.imshow(population, cmap='viridis', interpolation='nearest')
-plt.show()
+    if t==10 or t==50 or t==99:
+        population=new_population
+        plt.figure(figsize=(6, 4), dpi=150)
+        plt.imshow(population, cmap='viridis', interpolation='nearest')
+        plt.show()
