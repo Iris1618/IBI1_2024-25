@@ -1,0 +1,5 @@
+Practical6 Reflection:
+It is not easy as a 2 hours work.
+But i enjoyed using code to get what i want and change the chart parameters to make it more delicate.
+And i learned some new functions like zip() and the random.choice of numpy which is very useful.
+And i found when i want to learn to use a new function, AL can be quite useful to intoduce its usage to me.
