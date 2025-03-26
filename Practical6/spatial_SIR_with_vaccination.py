@@ -35,11 +35,10 @@ def infect_neighbors(neighbors):
             if population[nx, ny] == 0:        
                 if np.random.rand() < beta:
                     population[nx, ny] = 1     # Infect
-                    #population[nx,ny]=np.random.choice(range(2),1,[1-beta,beta]) why cannot
 
 def recover(x, y):
     if np.random.rand() < gamma:
-        population[x, y] = 2   #population[x,y]=np.random.choice(range(2),1,[1-gamma,gamma])
+        population[x, y] = 2  
 
 beta=0.3
 gamma=0.05
