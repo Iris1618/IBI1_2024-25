@@ -69,4 +69,4 @@ for t in range(times):
         population=new_population
         plt.figure(figsize=(6, 4), dpi=150)
         plt.imshow(population, cmap='viridis', interpolation='nearest')
-        plt.show()
+plt.show()
