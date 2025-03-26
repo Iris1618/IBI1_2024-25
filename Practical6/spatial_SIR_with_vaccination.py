@@ -1,30 +1,15 @@
-#Create a matrix to represent the population
-#Initialize all cells to 0 
-#Randomly select an outbreak location and set it to 1 
-#Set parameters: infection probability (beta), recovery probability (gamma), number of time steps (times)
-
-#Function to find infected cells in the population
-#Function to determine neighboring cells for a given cell
-#Function to infect neighboring cells based on probability
-#Function to check recovery of infected cells based on probability
-
-#For each time step from 0 to times:
-#Find all currently infected cells
-#Create a copy of the current population state
-#For each infected cell: Identify all neighboring cells
-#Infect neighboring cells
-#Recover cells
-#Update the population matrix with new states
-
-#Display the initial population grid
-#After simulation completes, display the final population grid
-#Add a color bar to indicate the meaning of each color
-
 import numpy as np
 import matplotlib.pyplot as plt
 
 population=np.zeros((100,100))
+V_rate = float(input("please input the vaccination rate:"))
+V = np.random.choice(range(100), int( 100 * V_rate), replace=False)
+for x in V:
+    y = np.random.choice(range(100))
+    population[x, y] = 3
 outbreak=np.random.choice(range(100),2)
+while population[outbreak[0],outbreak[1]]==3:
+    outbreak=np.random.choice(range(100),2)
 population[outbreak[0],outbreak[1]]=1
 plt.figure(figsize=(6,4),dpi=150)
 plt.imshow(population,cmap='viridis',interpolation='nearest')
@@ -50,10 +35,11 @@ def infect_neighbors(neighbors):
             if population[nx, ny] == 0:        
                 if np.random.rand() < beta:
                     population[nx, ny] = 1     # Infect
-                    
+                    #population[nx,ny]=np.random.choice(range(2),1,[1-beta,beta]) why cannot
+
 def recover(x, y):
     if np.random.rand() < gamma:
-        population[x, y] = 2 
+        population[x, y] = 2   #population[x,y]=np.random.choice(range(2),1,[1-gamma,gamma])
 
 beta=0.3
 gamma=0.05
@@ -71,4 +57,5 @@ for t in range(times):
 population=new_population
 plt.figure(figsize=(6, 4), dpi=150)
 plt.imshow(population, cmap='viridis', interpolation='nearest')
+plt.colorbar(ticks=[0,1,2,3],label="state") # 0 for susceptible\1 for infeted\2 for recovered\3 for vaccinated
 plt.show()
