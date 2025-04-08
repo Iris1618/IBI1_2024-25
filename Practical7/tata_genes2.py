@@ -2,7 +2,7 @@ import re
 input=open("c:/Users/Iriss/Desktop/IBI/Saccharomyces_cerevisiae.R64-1-1.cdna.all.fa",'r')
 input=input.read()
 tata= r'TATA(A|T)A(A|T)'
-processed_input=re.sub(r'\n(>)', '||', input)
+processed_input=re.sub(r'\n(?=>)', '||', input)
 processed_input=re.sub(r']\n','||',processed_input)
 input_delete_n=re.sub(r'\n', '', processed_input)
 processed_data=re.sub(r'\|\|', '\n', input_delete_n)

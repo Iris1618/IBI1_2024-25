@@ -30,9 +30,9 @@ for line in lines:
                 if len(y)!=0:
                     if re.search(tata, y[0]):
                         count_tata += len(re.findall(tata, y[0]))
-                        spliced_tata_genes.append([gene_name, y[0], count_tata])
+                        spliced_tata_genes.append([gene_name, sequence, count_tata])
                         count_tata=0
-        gene_name = line[1:9]
+        gene_name = line[1:8]
         sequence = ''
     else:
         sequence += line
@@ -43,7 +43,7 @@ if len(gene_name)!=0 :
                 if len(y)!=0:
                     if re.search(tata, y[0]):
                         count_tata += len(re.findall(tata, y[0]))
-                        spliced_tata_genes.append([gene_name, y[0], count_tata])
+                        spliced_tata_genes.append([gene_name, sequence, count_tata])
 
 filename = splice+'_spliced_genes.fa'
 output=open('c:/Users/Iriss/Desktop/IBI/'+filename,'w')
