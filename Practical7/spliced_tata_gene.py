@@ -46,6 +46,6 @@ if len(gene_name)!=0 :
                         spliced_tata_genes.append([gene_name, sequence, count_tata])
 
 filename = splice+'_spliced_genes.fa'
-output=open('c:/Users/Iriss/Desktop/IBI/'+filename,'w')
+output=open('c:/Users/Iriss/Desktop/IBI/'+filename, 'w')
 for gene in spliced_tata_genes:
     output.write('>'+gene[0]+' TATA_count='+str(gene[2])+'\n'+gene[1]+'\n')
