@@ -6,6 +6,7 @@ class pateints:
         self.medical_history=medical_history
     def details(self):
         print(f"Patient Name: {self.name}, Age: {self.age}, Latest Admission: {self.date_of_latest_admission}, Medical History: {self.medical_history}")
+
 name= "Iris" 
 age="18"
 date_of_latest_admission="2025.1.21"
