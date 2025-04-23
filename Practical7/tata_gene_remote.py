@@ -1,7 +1,7 @@
 import datetime
 import re
 start_time = datetime.datetime.now()
-input=open("c:/Users/Iriss/Desktop/IBI/Saccharomyces_cerevisiae.R64-1-1.cdna.all.fa",'r')
+input=open("/public/workspace/robert_young/ibi1_2025/Saccharomyces_cerevisiae.R64-1-1.cdna.fa",'r')
 gene_name=[]
 last_seq=[]
 include_tata=[]
@@ -23,7 +23,7 @@ if len(gene_name)!=0 :
             sequence=''.join(last_seq)
             if re.search(tata, sequence):
                 include_tata.append([gene_name, sequence])
-output=open('c:/Users/Iriss/Desktop/IBI/tata_genes.fa', 'w')
+output=open('/public/workspace/IBI1_17/dongting/tata_genes.fa', 'w')
 for i in include_tata:
     output.write('>'+i[0]+'\n')
     output.write(i[1]+'\n')

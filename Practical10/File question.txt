@@ -1,0 +1,3 @@
+Question: What is the absolute difference of DALYs between China and UK over time?
+line number:40-49
+results: the absolute difference gradually decreases, which means the DALYs between China and UK are becoming similar.
