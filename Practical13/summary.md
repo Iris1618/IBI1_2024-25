@@ -2,7 +2,7 @@
   Length: 222 amino acids  
   Subcellular localisation: mitochondria  
 2.Online BlAST Results:  
-  hit: A BLAST search of the human SOD2 protein against the UniProt database, restricted to Eutheria (placentals), yielded 250 hits.
+  hit: A BLAST search of the human SOD2 protein against the UniProt database, restricted to Eutheria (placentals), yielded 250 hits.  
   identity: The retrieved hits showed percentage identities ranging from 58.1% to 100%. And among non-human species, the highest similarity was observed with the Pan paniscus (Pygmy chimpanzee) sequence (UniProt ID: A0A2R9BMB0), showing 99.5% identity.  
 3.Comparison  
 | Comparison      | Alignment Score | Percentage Identity |
