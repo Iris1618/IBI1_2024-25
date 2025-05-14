@@ -10,6 +10,7 @@
 | Human vs Mouse  | 1097            | 90.09%              |
 | Human vs Random | -271            | 5.41%               |
 | Mouse vs Random | -282            | 4.50%               |  
+
 4.The human and mouse SOD2 proteins are the most closely related, with a high alignment score of 1097 and 90.09% identity amino acids.
 
 
