@@ -75,7 +75,7 @@ class GOHandler(xml.sax.ContentHandler):
         elif self.current_tag == "namespace":
             self.namespace += content.strip()
         elif self.current_tag=="name":
-            self.name_buffer += content  # accumulate name
+            self.name_buffer += content 
         
 start_sax = datetime.now()
 parser = xml.sax.make_parser()
