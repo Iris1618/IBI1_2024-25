@@ -17,8 +17,8 @@ v = list(d.values())
 plt.figure(figsize=(10, 6))
 plt.bar(c,v,color='skyblue')                 #bar chart creation
 plt.title("Programming language popularity")
-plt.ylabel("language")
-plt.xlabel("percentage")
+plt.ylabel("percentage")
+plt.xlabel("language")
 for i in range(len(d)):    #Display the corresponding value on each column
     plt.text(i, v[i] + 0.5, str(v[i]), ha='center', va='bottom')
 plt.show()                      # show chart
