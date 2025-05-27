@@ -1,4 +1,4 @@
-Hello, my name is Iris
+Hello, my name is Iris.
 I like drinking milktea and eating chocolate biscuits.
-I am enjoying learning IBI1 in person again 
-I am happy that I can push my repo from Visual Studio Code to GitHub
+I am enjoying learning IBI1 in person again .
+I am happy that I can push my repo from Visual Studio Code to GitHub.
