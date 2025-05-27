@@ -28,12 +28,13 @@ for line in lines:
     if line[0]==">":
         if len(gene_name)!=0 :
             if splice_donor in sequence and splice_acceptor in sequence:
-                y= re.findall(rf'{splice_donor}.+{splice_acceptor}',sequence)
-                if len(y)!=0:
-                    if re.search(tata, y[0]):
-                        count_tata += len(re.findall(tata, y[0]))
-                        spliced_tata_genes.append([gene_name, sequence, count_tata])
-                        count_tata=0
+                y = re.findall(rf'{splice_donor}.*?{splice_acceptor}', sequence)
+                count_tata=0
+                for frag in y:
+                    count_tata += len(re.findall(tata, frag))
+                if count_tata > 0:
+                    spliced_tata_genes.append([gene_name, sequence, count_tata])
+        
         gene_name_list = re.findall(r'gene:(\w+)', line)
         if gene_name_list:
              gene_name = gene_name_list[0]
@@ -45,11 +46,13 @@ for line in lines:
 
 if len(gene_name)!=0 :
             if splice_donor in sequence and splice_acceptor in sequence:
-                y= re.findall(rf'{splice_donor}.+{splice_acceptor}',sequence)
-                if len(y)!=0:
-                    if re.search(tata, y[0]):
-                        count_tata += len(re.findall(tata, y[0]))
-                        spliced_tata_genes.append([gene_name, sequence, count_tata])
+                y = re.findall(rf'{splice_donor}.*?{splice_acceptor}', sequence)
+                count_tata=0
+                for frag in y:
+                    count_tata += len(re.findall(tata, frag))
+                if count_tata > 0:
+                    spliced_tata_genes.append([gene_name, sequence, count_tata])
+        
 
 filename = splice+'_spliced_genes.fa'
 output=open('c:/Users/Iriss/Desktop/IBI/'+filename, 'w')
