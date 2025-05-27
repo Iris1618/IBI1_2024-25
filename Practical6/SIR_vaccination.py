@@ -39,8 +39,9 @@ for rate in V_rate:
 
 plt.figure(figsize=(6, 4), dpi=150)
 
+colors = cm.plasma(np.linspace(0, 1, len(V_rate)))
 for i in range(len(V_rate)):
-    plt.plot(I_data[i], color=cm.plasma(148), label=f'{int(V_rate[i]*100)}%')
+    plt.plot(I_data[i], color=colors[i], label=f'{int(V_rate[i]*100)}%')
 
 plt.xlabel('time')
 plt.ylabel('number of infected people')
