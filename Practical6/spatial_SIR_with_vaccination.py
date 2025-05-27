@@ -5,8 +5,12 @@ population=np.zeros((100,100))
 V_rate = float(input("please input the vaccination rate:"))
 V = np.random.choice(range(100), int( 100 * V_rate), replace=False)
 for x in V:
-    y = np.random.choice(range(100))
-    population[x, y] = 3
+    while True:
+        y = np.random.choice(range(100))
+        if population[x, y] == 0:  #Avoid repeated vaccinations
+            population[x, y] = 3
+            break
+
 outbreak=np.random.choice(range(100),2)
 while population[outbreak[0],outbreak[1]]==3:
     outbreak=np.random.choice(range(100),2)
@@ -51,8 +55,8 @@ for t in range(times):
         recover(x,y)
     if t==10 or t==50 or t==99:
         population=new_population
-        plt.figure(figsize=(6, 4), dpi=150)
+        plt.figure(figsize=(10, 10), dpi=150)
         plt.imshow(population, cmap='viridis', interpolation='nearest')
-        plt.colorbar(ticks=[0,1,2,3],label="state") # 0 for susceptible\1 for infeted\2 for recovered\3 for vaccinated
+        plt.colorbar(ticks=[0,1,2,3],label="State") 
 plt.show()
 
