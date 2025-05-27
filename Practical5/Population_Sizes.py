@@ -18,12 +18,14 @@ import matplotlib.pyplot as plt  #library imports
 import numpy as np
 cmap = plt.cm.tab20c      #colormap creation learned from internet
 colors1= cmap(np.linspace(0, 1, len(labels_uk)))  #color generation
+plt.figure(figsize=(10, 6))
 p1=plt.pie(uk_countries, labels=labels_uk,colors=colors1,autopct='%1.1f%%',shadow=False) #generate UK pie chart
 plt.axis('equal')
 plt.title("The population in 2022 of each of the component countries in the United Kingdom")
 plt.show()     #display chart
 
-colors2 = cmap(np.linspace(0, 1, len(labels_china)))
+colors2 = cmap(np.linspace(0, 1, len(labels_china))) #colormap creation learned from internet
+plt.figure(figsize=(10, 6))
 p2=plt.pie(china_provinces,colors=colors2, labels=labels_china,autopct='%1.1f%%',shadow=False) #generate China pie chart
 plt.axis('equal')
 plt.title("The population in 2022 of each of the provinces in China")
