@@ -13,6 +13,7 @@ splice = input("please input one of the three possible splice donor/acceptor com
 valid_splices = ['GTAG', 'GCAG', 'ATAC']
 if splice not in valid_splices:
     print("invalid splices")
+    
 splice_donor = splice[:2]
 splice_acceptor = splice[2:]
 
@@ -32,7 +33,11 @@ for line in lines:
                         count_tata += len(re.findall(tata, y[0]))
                         spliced_tata_genes.append([gene_name, sequence, count_tata])
                         count_tata=0
-        gene_name = line[1:8]
+        gene_name_list = re.findall(r'gene:(\w+)', line)
+        if gene_name_list:
+             gene_name = gene_name_list[0]
+        else:
+             gene_name = "UNKNOWN"
         sequence = ''
     else:
         sequence += line
