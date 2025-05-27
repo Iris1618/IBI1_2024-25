@@ -57,6 +57,6 @@ for t in range(times):
         population=new_population
         plt.figure(figsize=(10, 10), dpi=150)
         plt.imshow(population, cmap='viridis', interpolation='nearest')
-        plt.colorbar(ticks=[0,1,2,3],label="State") 
+        plt.colorbar(ticks=[0,1,2,3],label="State(0=Susceptible, 1=Infected, 2=Recovered, 3=Vaccinated)") 
 plt.show()
 
