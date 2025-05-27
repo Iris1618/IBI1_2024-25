@@ -14,11 +14,12 @@ print(d)                        # print the dictionary
 import matplotlib.pyplot as plt #import necessary library
 c = list(d.keys())              #data extraction
 v = list(d.values())
-
 plt.figure(figsize=(10, 6))
 plt.bar(c,v,color='skyblue')                 #bar chart creation
 plt.title("Programming language popularity")
 plt.ylabel("language")
 plt.xlabel("percentage")
+for i in range(len(d)):    #Display the corresponding value on each column
+    plt.text(i, v[i] + 0.5, str(v[i]), ha='center', va='bottom')
 plt.show()                      # show chart
 print(d['Python'])              # print designated popularity
