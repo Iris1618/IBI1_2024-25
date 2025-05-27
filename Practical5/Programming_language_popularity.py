@@ -14,7 +14,7 @@ print(d)                        # print the dictionary
 import matplotlib.pyplot as plt #import necessary library
 c = list(d.keys())              #data extraction
 v = list(d.values())
-p1=plt.bar(c,v)                 #bar chart creation
+p1=plt.bar(c,v,color='skyblue')                 #bar chart creation
 plt.title("Programming language popularity")
 plt.ylabel("language")
 plt.xlabel("percentage")
