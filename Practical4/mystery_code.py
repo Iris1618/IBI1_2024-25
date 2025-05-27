@@ -1,5 +1,6 @@
 # What does this piece of code do?
-# Answer:Count the number of times two equal numbers are randomly generated
+# Answer:This code counts the number of iterations it takes for two randomly generated numbers to be equal.
+# It stops counting and prints the count as soon as the first match occurs.
 
 # Import libraries
 # randint allows drawing a random number,
