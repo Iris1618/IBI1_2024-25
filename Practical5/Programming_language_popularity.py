@@ -21,5 +21,8 @@ plt.ylabel("percentage")
 plt.xlabel("language")
 for i in range(len(d)):    #Display the corresponding value on each column
     plt.text(i, v[i] + 0.5, str(v[i]), ha='center', va='bottom')
-plt.show()                      # show chart
-print(d['Python'])              # print designated popularity
+plt.show()# show chart
+
+language = 'Python'       # variable for activity
+popularity = d[language]  # query via variable
+print(popularity)         # print designated popularity
