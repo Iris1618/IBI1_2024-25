@@ -58,7 +58,7 @@ gamma=0.05
 times=100
 for t in range(times):
     infected_x, infected_y=find_infected(population)
-    new_population=population
+    new_population = population.copy()
     for i in range(len(infected_x)):
         x=infected_x[i]
         y=infected_y[i]
