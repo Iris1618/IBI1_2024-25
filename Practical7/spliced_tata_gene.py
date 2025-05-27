@@ -1,4 +1,5 @@
 import re
+import sys
 input_file=open("c:/Users/Iriss/Desktop/IBI/Saccharomyces_cerevisiae.R64-1-1.cdna.all.fa",'r')
 input_file=input_file.read()
 tata= r'TATA(A|T)A(A|T)'
@@ -13,7 +14,7 @@ splice = input("please input one of the three possible splice donor/acceptor com
 valid_splices = ['GTAG', 'GCAG', 'ATAC']
 if splice not in valid_splices:
     print("invalid splices")
-    
+    sys.exit()
 splice_donor = splice[:2]
 splice_acceptor = splice[2:]
 
