@@ -29,10 +29,5 @@
 - **Feedback**: Axis labels in bar chart were swapped; variable query unclear.  
   **Action**: I fixed the axis labels on the bar chart and rewrote the query so the language can be specified via a variable.
 
----
-
-## Summary
-
-All actionable feedback items have now been addressed. The changes have been committed to my GitHub repository with improved commit messages.
 
 
