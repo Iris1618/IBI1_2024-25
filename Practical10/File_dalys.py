@@ -33,9 +33,10 @@ else:
 uk = dalys_data.loc[dalys_data.Entity=="United Kingdom", ["DALYs", "Year"]]
 plt.plot(uk.Year, uk.DALYs, 'b+')
 plt.xticks(uk.Year,rotation=-90)
-plt.title('the DALYS over time in the UK')
+plt.title('DALYS in the UK over time')
 plt.xlabel("Year")
 plt.ylabel("DALYs")
+plt.tight_layout()
 plt.show()
 
 china=dalys_data.loc[dalys_data.Entity=="China", ["DALYs", "Year"]]
