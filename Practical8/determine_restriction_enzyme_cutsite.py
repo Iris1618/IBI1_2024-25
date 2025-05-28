@@ -3,11 +3,11 @@ def determine_restriction_enzyme_cutsites(DNA_sequence,rec_sequence):
     for i in DNA_sequence:
         if i in valid:
             continue
-        return "invalid sequence"
+        return "invalid DNA sequence"
     for i in rec_sequence:
         if i in valid:
             continue
-        return "invalid sequence"
+        return "invalid recognition sequence"
     
     sites = []
     len_rec=len(rec_sequence)
