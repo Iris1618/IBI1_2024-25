@@ -1,3 +1,4 @@
 Question: What is the absolute difference of DALYs between China and UK over time?
 line number:40-49
-results: the absolute difference gradually decreases, which means the DALYs between China and UK are becoming similar.
+results: The absolute difference of DALYs between China and UK shows a gradually decreasing trend over the years,
+suggesting that the disease burden in both countries is becoming more similar over time.
