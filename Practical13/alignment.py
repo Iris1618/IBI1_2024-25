@@ -1,7 +1,5 @@
-human_sod2=open("c:/Users/Iriss/Desktop/IBI/IBI1_2024-25/Practical13/human_sod2.fasta",'r')
-mouse_sod2=open("c:/Users/Iriss/Desktop/IBI/IBI1_2024-25/Practical13/mouse_sod2.fasta",'r')
-BLOSUM62=open("c:/Users/Iriss/Desktop/IBI/IBI1_2024-25/Practical13/BLOSUM62.txt",'r')
-random=open("c:/Users/Iriss/Desktop/IBI/IBI1_2024-25/Practical13/random.fasta",'r')
+import os
+os.chdir("c:/Users/Iriss/Desktop/IBI/IBI1_2024-25/Practical13")
 
 def get_blosum_matrix(file):
     lines=[]
@@ -50,13 +48,14 @@ def print_result(name1, seq1, name2, seq2, score, identity, score_vector):
     print("\nSummary:")
     print(f"Total Score: {score}")
     print(f"Similarity percent: {identity:.2f}%\n")
-
-blosum62=get_blosum_matrix(BLOSUM62)
-human_sequence=get_fasta_sequence(human_sod2)
-mouse_sod2.seek(0)
-mouse_sequence=get_fasta_sequence(mouse_sod2)
-random.seek(0)
-random_sequence=get_fasta_sequence(random)
+with open("BLOSUM62.txt", "r") as BLOSUM62:
+    blosum62=get_blosum_matrix(BLOSUM62)
+with open("human_sod2.fasta", "r") as human_sod2:
+    human_sequence = get_fasta_sequence(human_sod2)
+with open("mouse_sod2.fasta", "r") as mouse_file:
+    mouse_sequence = get_fasta_sequence(mouse_file)
+with open("random.fasta", "r") as random_file:
+    random_sequence = get_fasta_sequence(random_file)
 
 score, identity, vector = compare_sequences(human_sequence, mouse_sequence, blosum62)
 print_result('human_SOD2',human_sequence,'mouse_sequence',mouse_sequence,score,identity,vector)
