@@ -14,7 +14,10 @@ def determine_restriction_enzyme_cutsites(DNA_sequence,rec_sequence):
     for i in range(len(DNA_sequence) - len_rec + 1):
         if DNA_sequence[i:i+len_rec] == rec_sequence:
             sites.append(i)
-    return sites
+    if sites:
+        return sites
+    else:
+        return "No cut sites found"
 
 DNA='ACGGTAGGGACGTAACGT'
 rec_sequence="ACG"
