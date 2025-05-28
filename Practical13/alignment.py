@@ -24,6 +24,10 @@ def get_fasta_sequence(file):
     return sequence
 
 def compare_sequences(seq1, seq2, blosum62):
+    if len(seq1) != len(seq2):
+        print("Error: Sequences are not of equal length.")
+        return None, None, None
+
     scores = []
     identical = 0
     for a1, a2 in zip(seq1, seq2):
@@ -36,9 +40,9 @@ def compare_sequences(seq1, seq2, blosum62):
             identical += 1
     total_score = sum(scores)
     similarity_percent = (identical / len(seq1)) * 100
-    return total_score, similarity_percent, scores
+    return scores, total_score, similarity_percent
 
-def print_result(name1, seq1, name2, seq2, score, identity, score_vector):
+def print_result(name1, seq1, name2, seq2, score_vector, score,identity):
     print(f"Comparison: {name1} vs {name2}")
     print(f"{name1} Sequence:\n{seq1}\n")
     print(f"{name2} Sequence:\n{seq2}\n")
@@ -48,6 +52,7 @@ def print_result(name1, seq1, name2, seq2, score, identity, score_vector):
     print("\nSummary:")
     print(f"Total Score: {score}")
     print(f"Similarity percent: {identity:.2f}%\n")
+
 with open("BLOSUM62.txt", "r") as BLOSUM62:
     blosum62=get_blosum_matrix(BLOSUM62)
 with open("human_sod2.fasta", "r") as human_sod2:
@@ -57,9 +62,15 @@ with open("mouse_sod2.fasta", "r") as mouse_file:
 with open("random.fasta", "r") as random_file:
     random_sequence = get_fasta_sequence(random_file)
 
-score, identity, vector = compare_sequences(human_sequence, mouse_sequence, blosum62)
-print_result('human_SOD2',human_sequence,'mouse_sequence',mouse_sequence,score,identity,vector)
-score, identity, vector = compare_sequences(human_sequence, random_sequence, blosum62)
-print_result('human_SOD2',human_sequence,'random_sequence',random_sequence,score,identity,vector)
-score, identity, vector = compare_sequences(mouse_sequence, random_sequence, blosum62)
-print_result('mouse_SOD2',mouse_sequence,'random_sequence',random_sequence,score,identity,vector)
+pairs = [
+    ("Human vs Mouse", human_sequence, mouse_sequence),
+    ("Human vs Random", human_sequence, random_sequence),
+    ("Mouse vs Random", mouse_sequence, random_sequence),]
+
+for pair_name, seq1, seq2 in pairs:
+    result = compare_sequences(seq1, seq2, blosum62)
+    if result[0] is not None:
+        print(f"Comparison: {pair_name}")
+        print_result(pair_name.split(" vs ")[0], seq1, pair_name.split(" vs ")[1], seq2, result[0], result[1], result[2])
+    else:
+        print(f"{pair_name} two sequences have unequal lengths.\n")
